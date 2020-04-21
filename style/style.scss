@@ -1,0 +1,1044 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    @include whole_doc;
+    font-family: $main_font;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+// prvi section sa main-navom i orange pozadinom
+
+header {
+    @include whole_doc;
+    min-height: 80vh;
+    background-color: $pale_orange;
+    // ovo samo menja boje ikonica iz crne u belu
+    .white_pics {
+        filter: invert(100);
+    }
+    
+    nav {
+        @include content-width;
+        color: white;
+        display: flex;
+        padding: 2em 0;
+        .levi_header {
+            width: 30%;
+        }
+        .desni_header {
+            margin-left: auto;
+            display: flex;
+                ul {
+                    display: flex;
+                    list-style: none;
+                    li {
+                       padding: 0.7em 1em;
+                       border-bottom: 2px solid transparent;
+                        a {
+                           font-weight: bolder;
+                          padding: 1em;
+                          text-decoration: none; 
+                          color: white;
+                       } 
+                       &:hover {
+                           border-bottom: 2px solid $orange;
+                       } 
+                    }
+            #nav_search {
+                display: flex;
+                align-items: center;
+            }
+            #searchInput {
+                width: 0;
+                color: white;
+                transition: ease-in-out;
+                transition-duration: 0.5s;
+                border: none;
+                outline: none;
+                background-color: $pale_orange;
+            }
+        }
+        .menu_icon {
+            display: none;
+        }
+      }
+    }
+
+    .main_divovi {
+        @include content-width;
+        color: white;
+        display: flex;
+        padding: 5em 0;
+
+        .levi_main_div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-image: url('../images/bg-shape2.png');
+            background-repeat: no-repeat;
+            padding-left: 4em;
+            h1 {
+                font-size: 4em;
+                font-family: $sub_font;
+            }
+            p {
+                font-size: 1.2em;
+                width: 80%;
+            }
+            a {
+                @include orange_button;
+            }
+        }
+    }
+}
+
+//offer section
+
+.offer {
+    @include content-width;
+    padding: 4em;
+    h1 {
+        @include naslovi;
+        color: $navy_blue;
+    }
+    h4 {
+        color: $light_blue1;
+        text-align: center;
+    }
+    .offer_type {
+        padding: 3em;
+        //ovo je klasa za aktivni tab 
+        .active_tab { 
+            border-bottom: 4px solid $light_green;
+          a {color: $navy_blue;}   
+      }
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            li {
+                padding: 1em 2em;
+                border-bottom: 4px solid $pale_blue;
+                a {
+                  text-decoration: none;  
+                  color: $light_blue1;
+                  font-family: $sub_font;
+                  font-size: 1.7em;
+                }
+                &:hover {
+                    border-bottom: 4px solid $light_green;
+                    a {color: $navy_blue;}
+                }
+            }
+        }
+    }
+    
+    .offer_recipes {
+        display: flex;
+        padding: 3em;
+
+        .offer_levi_div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            h1 {
+                text-align: left;
+                color: $light_green;
+                font-size: 2.5em;
+                margin: 0;
+                padding: 0.5em 0;
+                width: 70%;
+            }
+            p {
+                color: $navy_blue;
+                padding: 1em 0;
+                width: 85%;
+                line-height: 1.6;
+            }
+            a {
+                @include orange_button;
+            }
+        }
+    }
+}
+
+//what our users say section
+
+.users {
+    @include content-width;
+    padding-top: 4em;
+    h2 {
+        @include naslovi;
+    }
+
+    .user_container {
+        display: flex;
+        padding: 4em 0;
+
+        .left_arrow_div, .right_arrow_div {
+            display: flex;
+            align-items: center;
+            padding: 3em;
+            opacity: 0.2;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .karusel_container {
+            overflow: hidden;
+            .karusel {
+                width: 300%;
+                display: flex;
+                transition: ease-in-out;
+                transition-duration: 0.5s;
+                .user_div {
+                    width: 33%;
+                    margin: 0.3%;
+                    display: flex;
+                    align-items: center;
+                    background-color: $comment_blue;
+                    padding: 7em 4em;
+                    border-radius: 10px;
+                    color: white;
+        
+                    .left_user_div {
+                        display: flex;
+                        align-items: center;
+                        flex-basis: 50%;
+                        .user_img_div {
+                            border: 5px solid #a1c9fc;
+                            border-radius: 50%;
+                            height: 100px;
+                            width: 100px;
+                            background-image: url('../images/user-image.png');
+                            background-position: center;
+                            background-size: cover;
+                            overflow: hidden;
+                            img{ height: 100%;}
+                        }
+                        .user_info_div {
+                            padding: 1em;
+                            h3 {
+                                font-family: $sub_font;
+                            }
+                            p {
+                                text-transform: uppercase;
+                                font-size: 0.7em;
+                            }
+                        }
+                    }
+                    .right_user_div {
+                        flex-basis: 50%;
+                        font-style: italic;
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+//our latest recipes section
+
+.our_latest_recipes {
+    padding-top: 4em;
+    @include content-width;
+    color: $navy_blue;
+
+    .orange_link {
+        text-align: right;
+        padding: 0.5em;
+        a {
+            text-decoration: none;
+            color: $orange;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    h2 {
+        @include naslovi;
+        text-align: left;
+    }
+
+    .recipe_container {
+        display: flex;
+        padding-top: 1em;
+        .recipe_div_1 {
+            .image_div {
+                background-image: url('../images/recipe1.png');
+            }
+            @include recipe;  
+        }
+        .recipe_div_2 {
+            .image_div {
+                text-align: right;
+                background-image: url('../images/recipe2.png');
+                p {
+                    @include trending_tag;
+                }
+            }
+            @include recipe;
+        }
+        .recipe_div_3 {
+            .image_div{
+                background-image: url('../images/recipe3.png');
+            }
+            @include recipe;
+            
+        }
+        .recipe_div_4 {
+            @include recipe;
+            background-image: url('../images/img.png');
+            box-shadow:inset 0 0 0 2000px rgba(233, 148, 50, 0.8);
+            .text_div {
+                p {color: white;}
+                h2 {
+                    color: white;
+                    padding: 0.5em 0;
+                }
+            }
+        }
+    }
+}
+
+//popular this week section
+
+.popular {
+    @include content-width;
+    padding-top: 10em;
+    color: $navy_blue;
+    display: flex;
+    .light_letters {
+        color: $light_blue1;
+        line-height: 1.4;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .left_popular {
+        flex-basis: 60%;
+        .left_top {
+           .popular_p {
+                @include trending_tag;
+                margin: 0;
+            } 
+            h2 {
+                @include naslovi;
+                text-align: left;
+                padding: 1em 0;
+            }
+        }
+        .left_bot {
+            padding-top: 3em;
+            .ingridient_lists {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 1em;
+                h3 {
+                    font-family: $sub_font;
+                }
+                .left_list, .right_list {
+                    flex-basis: 50%;
+                    ul {
+                        list-style: none;
+                        padding: 0.5em;
+                        li {
+                            padding: 0.5em;
+                        }
+                    }
+                }
+                .right_list {
+                    transform: translate(30%);
+                }
+            }
+        }
+        .popular_recipe_button {
+            padding-top: 4em;
+            a {
+                @include orange_button;    
+            }
+        }
+        
+    }
+    .right_popular {
+        flex-basis: 30%;
+        img {
+            transform: translate(50%);
+            filter: drop-shadow(-5px 15px 20px rgb(185, 185, 185));
+        }
+    }
+    
+}
+
+//partners section
+
+.partners {
+    @include content-width;
+    padding: 8em 0;
+    display: flex;
+    justify-content: space-between;
+    .partner_logo {
+        img {
+            filter: grayscale(100%);
+            filter: contrast(0%);
+            opacity: 0.4;
+        }
+    }
+}
+
+//newsletters section
+
+.newsletters {
+    @include content-width;
+    width: 50%;
+    padding: 3em 5em;
+    background-color: white;
+    color: $navy_blue;
+    border-radius: 10px;
+    transform: translateY(40%);
+    z-index: 99;
+    h2 {
+        @include naslovi;
+        text-align: left;
+    }
+    .sub_form {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        input {
+            flex-basis: 70%;
+            padding: 1em;
+            border: 1px solid $pale_blue;
+            border-radius: 50px;
+            &::placeholder {
+                color:$navy_blue;
+            }
+        }
+        p {
+            flex-basis: 30%;
+            text-align: right;
+            a {
+                @include orange_button;
+            }
+        }
+    }
+    .privacy_letters {
+        color: $light_blue1;
+        font-size: 0.8em;
+        padding: 0 1em;
+    }
+}
+
+//footer
+footer {
+    background-color: $dark_green1;
+    color: $pale_green;
+    h3 {
+        color: white;
+        font-family: $sub_font;
+        padding: 1em 0;
+    }
+    .main_foot_div {
+        @include content-width;
+        display: flex;
+        padding: 8em 0;
+        address {
+            flex-basis: 50%;
+            font-family: $main_font;
+            img {
+                filter: invert(100);
+                padding-bottom: 2em;
+            }
+            .phone_mail {
+                padding: 2em 0;
+                line-height: 1.6;  
+            }
+        }
+        .links {
+            flex-basis: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            ul {
+                list-style: none;
+                li {
+                    line-height: 1.8;
+                    a {
+                        text-decoration: none;
+                        color: $pale_green;
+                    }
+                }
+            }
+        }
+    }
+    .foot_note {
+        padding: 1.5em 0;
+        font-size: 0.8em;
+        background-color: $dark_green2;
+        p {
+           @include content-width; 
+        }
+    }
+}
+
+// meadia query za tablet
+
+@media screen and (max-width: 1200px) {
+    html {
+        overflow-x: hidden;
+    }
+    header {
+        min-height: 80vh;
+        nav {
+            @include tablet_content;
+                padding: 3em 1em;
+                line-height: 2em;
+            img {
+                height: 100%;
+                padding: 0 1em;
+            }
+            .desni_header {
+                position: relative;
+                line-height: 2em;
+                margin-right: 1em;
+                .nav_list {
+                    display: none;
+                    position: absolute;
+                    margin-top: 3em;
+                    width: 300px;
+                    li, a {
+                        padding-left: 0;
+                    }
+                }
+                .menu_icon {
+                    padding: 0.3em;
+                    display: block;
+                    img {
+                        filter: invert(100);
+                    }
+                }
+                #nav_search {
+                    padding: 0.3em 1em;
+                    img {
+                        padding: 0;
+                    }
+                }
+        }
+    }
+        .main_divovi {
+            @include tablet_content;
+            .levi_main_div {
+                justify-content: space-between;
+                padding: 2em;
+                background-size: contain;
+                transform: translateX(-25%);
+                h1 {
+                    font-size: 5em;
+                    transform: translateX(25%);
+                }
+                p {
+                    transform: translateX(25%);
+                    margin-top: 3em;
+                    font-size: 1.5em;
+                    line-height: 1.8;
+                    width: 100%;
+                }
+            }
+        }
+       
+   }
+   .offer {
+       @include tablet_content;
+       padding: 4em 0;
+       h1 {
+           font-size: 3em;
+       }
+       h4 {
+           font-size: 1.5em;
+       }
+       .offer_type {
+           padding: 5em 0;
+           ul {
+               li {
+                padding: 1em 3em;
+                   a {
+                       font-size: 2.7em;
+                   }
+               }
+           }
+       }
+       .offer_recipes {
+           padding-top: 0;
+        .offer_levi_div {
+            flex-basis: 80%;
+          h1 {
+             font-size: 3.4em;
+         }
+         p {
+             width: 90%;
+             font-size: 1.8em;
+         }
+        }
+       .offer_desni_div {
+           flex-basis: 20%;
+           img {
+               padding-top: 6em;
+           }
+       }
+    }
+   }
+   .users {
+       @include tablet_content;
+       h2 {
+           font-size: 3em;
+       }
+       .user_container{
+           .left_arrow_div, .right_arrow_div {
+           padding: 2em;
+           a {
+               line-height: 4em;
+               img {
+                   height: 4em;
+               }
+           }
+       }
+       .user_div {
+            padding: 6em 3em;
+            font-size: 1.3em;
+       }
+       }
+   }
+   .our_latest_recipes {
+       @include tablet_content;
+       padding-top: 8em;
+       h2 {
+           font-size: 3em;
+       }
+       .recipe_container {
+           flex-wrap: wrap;
+           justify-content: center;
+           p {
+               font-size: 1.3em;
+           }
+           .recipe_div_1, .recipe_div_2, .recipe_div_3, .recipe_div_4 {
+               flex-basis: 45%;
+               margin: 1em;
+               .image_div {
+                   height: 250px;
+                   p {
+                       visibility: hidden;
+                   }
+               }
+               
+               .text_div {
+                   height: 100px;
+                   padding: 2em;
+                   h3 {
+                       font-size: 2em;
+                       padding: 0.5em 0;
+                   }
+               }
+           }
+           .recipe_div_4 {
+            background-size: cover;
+            background-position: bottom;
+            .text_div {
+                padding: 0 2em;
+                width: 70%;
+            }
+        }
+       }
+   }
+   .popular {
+       @include tablet_content;
+       padding: 8em 2em;
+       .left_popular {
+           flex-basis: 55%;
+           .left_top {
+               .popular_p {
+                   font-size: 1em;
+                   border-radius: 15px;
+                   letter-spacing: 2px;
+               }
+               h2 {
+                   font-size: 3em;
+               }
+               p {
+                font-size: 1.6em;
+                line-height: 2;
+               }
+           }
+           .popular_recipe_button {
+            a {
+                font-size: 1.5em;
+                padding: 1.2em 3em;
+            }
+            
+            }
+           .left_bot {
+               h3 {
+                   font-size: 2em;
+                   font-family: $sub_font;
+               }
+               .ingridient_lists {
+                  display: block;
+                  .left_list {
+                    font-size: 1.5em;
+                    padding-top: 2em;
+                }
+                .right_list {
+                     font-size: 1.5em;
+                     padding-top: 2em;
+                     transform: translate(0%)
+                }
+               }
+               
+           }
+       }
+       .right_popular {
+           position: relative;
+           flex-basis: 45%;
+           img {
+               position: absolute;
+               transform: translate(-15%, 50%);
+               height: 65%;
+           }
+
+       }
+   }
+   .partners {
+       @include tablet_content;
+       justify-content: space-evenly;
+       padding-top: 8em;
+   }
+
+   .newsletters {
+       width: 80%;
+       padding: 5em;
+       border-radius: 15px;
+       h2 {
+           font-size: 2.2em;
+       }
+       .sub_form {
+           justify-content: space-between;
+           input {
+               padding: 2.5em;
+               &::placeholder{
+                font-size: 1.5em;
+               }
+           }
+           .subscribe_button {
+            font-size: 1.5em;
+            padding: 1.2em 5em;
+           }
+       }
+       .privacy_letters {
+           font-size: 1.2em;
+       }
+   }
+
+   footer {
+        padding-top: 10em;
+       .main_foot_div {
+          @include tablet_content; 
+          padding: 3em 2em;
+          font-size: 1.5em;
+          line-height: 2;
+          .links {
+              ul {
+                  li {
+                     line-height: 2.5; 
+                  }
+              }  
+          }
+       }
+       .foot_note {
+        @include tablet_content;
+          p {
+            font-size: 1.5em;
+            width: 100%;
+            padding: 2em;
+          }
+      }
+   }
+}
+
+// media query za telefone
+
+@media screen and (max-width: 750px) {
+    header {
+        min-height: 100vh;
+        nav {
+            position: relative;
+            .desni_header {
+                
+                ul {
+                    .nav_items {
+                        display: none;
+                    }
+                    #nav_search {
+                        img {
+                            padding: 0;
+                        }
+                    }
+                }
+                .nav_list {
+                    display: none;
+                    position: absolute;
+                    margin-top: 3em;
+                    width: 300px;
+                    li, a {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+            .main_divovi {
+                flex-direction: column;
+                .levi_main_div {
+                    position: relative;
+                    z-index: 6;
+                    background-image: none;
+                    p {
+                        font-size: 2em;   
+                    }
+                }
+                .desni_main_div {
+                    display: none;
+                    position: relative;
+                    
+                    img {
+                        position: absolute;
+                        transform: translate(30%, -20% );
+                        z-index: 5;
+                    }
+                }
+            }
+        
+    }
+    .offer {
+        h1 {
+            width: 80%;
+        }
+        h4 {
+            font-size: 2em;
+            width: 85%;
+            margin: 0 auto;
+            font-weight: normal;
+        }
+        .offer_type {
+            font-size: 0.7em;
+            ul {
+                width: 100%;
+                li {
+                    flex-basis: 33%;
+                    padding-bottom: 4em;
+                    border-bottom: 8px solid $pale_blue;
+                }
+            }
+        }
+        .offer_recipes {
+            .offer_levi_div {
+                h1 {
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 2.1em;
+                    padding: 2em;
+                }
+                justify-content: center;
+                flex-basis: 100%;
+                .offer_button {
+                    text-align: center;
+                    margin: 4em auto;
+                }
+            }
+            .offer_desni_div {
+                display: none;
+            }
+        }
+    }
+    .users {
+        .user_container {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+            font-size: 1.3em;
+        .user_div {
+            flex-basis: 80%;
+            order: 1;
+            flex-direction: column;
+            padding: 3em 4em;
+            border-radius: 20px;
+            .left_user_div {
+                justify-content: center;
+                height: 8em;
+                .user_img_div {
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+            .right_user_div {
+                text-align: center;
+                padding: 1em 0;
+            }
+        }
+        .left_arrow_div {
+            order: 2;
+            padding: 3em;
+        }
+        .right_arrow_div {
+            order: 3;
+            padding: 3em;
+        }
+        }
+        
+    }
+    .our_latest_recipes {
+        padding-top: 2em;
+        .orange_link {
+            display: none;
+        }
+        .recipe_container {
+            .recipe_div_1, .recipe_div_2, .recipe_div_3 {
+                border-radius: 20px;
+                .image_div {
+                    border-top-right-radius: 20px;
+                    border-top-left-radius: 20px;
+                    height: 220px;
+                }
+                .info_div {
+                    .time_div {
+                        img, span {height: 1.5;}  
+                    }
+                    .comment_div {
+                        display: none;
+                    }
+                }
+            }
+            .recipe_div_4 {
+               background-size: 150%;
+                .text_div {
+                    h2 {
+                        font-size: 2.2em;
+                    }
+                }
+            }
+        }
+    }
+    .popular {
+        .left_popular {
+            flex-basis: 90%;
+            .left_top {
+                position: relative;
+                z-index: 6;
+                .popular_p {
+                    border-radius: 100px;
+                }
+                h2 {
+                    padding: 1em 0 1em 0;
+
+                }
+                p {
+                    font-size: 2em;
+                }
+            }
+            .left_bot {
+                padding-top: 4em;
+                .ingridient_lists {
+                    .left_list, .right_list {
+                        font-size: 1.8em;
+                        ul {
+                            li{ 
+                                position: relative;
+                                z-index: 6;
+                                color: $navy_blue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right_popular {
+            flex-basis: 5%;
+            position: relative;
+            img {
+                z-index: 5;
+                height: 35%;
+                transform: translate(-60%, 90%);
+            }
+        }
+    }
+    .partners {
+        flex-wrap: wrap;
+        .partner_logo {
+            img {
+                height: 4em;
+                padding: 1.5em;
+            }
+           
+        }
+    }
+    .newsletters {
+        width: 70%;
+        padding-bottom: 10em;
+        h2 {
+            width: 100%;
+            padding-bottom: 2em;
+        }
+        .sub_form {
+            flex-direction: column;
+            input {
+                width: 90%;
+                &::placeholder {
+                    font-size: 2em;
+                }
+            }
+            p {
+                position: relative;
+                .subscribe_button {
+                    position: absolute;
+                    transform: translate(-50%, 60%);
+                }
+            }
+        }
+    }
+    footer {
+        .main_foot_div {
+            padding: 4em 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            address {
+                flex-basis: 100%;
+                text-align: center;
+                font-family: $main_font;
+                padding: 0 3em;
+                img {
+                    height: 3em;
+                }
+                
+            }
+            .links {
+                flex-direction: column;
+                .popular_recipes, .usefull_links {
+                    text-align: center;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        .foot_note {
+            text-align: center;
+            font-size: 1em;
+            p {
+                padding: 2em 0;
+            }
+        }
+    }
+}

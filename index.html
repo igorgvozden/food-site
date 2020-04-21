@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Blog</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Lora:700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+            <nav>
+                <div class="levi_header">
+                    <img class="white_pics" src="images/logo.png">
+                </div>
+                <div class="desni_header">
+                    <ul class="nav_list">
+                        <li class="nav_items"><a href="#">Home</a></li>
+                        <li class="nav_items"><a href="#">Chef inspiration</a></li>
+                        <li class="nav_items"><a href="#">Recipes</a></li>
+                        <li class="nav_items"><a href="#">Contact</a></li>
+                        
+                    </ul>
+                    <ul>
+                        <li id="nav_search"><img class="white_pics" src="images/search-icon.png"><input id="searchInput" type="text"></li>
+                        <li class="menu_icon" onclick="showMenu()"><img src="images/menu.png" alt="menu icon"></li>
+                    </ul>
+                </div>
+            </nav>
+        
+            <div class="main_divovi">
+                <div class="levi_main_div">
+                    <h1>It's time for Cooking!</h1>
+                    <p>Do you want to get something delicious, special and healthy? We are sincerely for your service. Welcome your arrival!</p>
+                    <p><a href="#recipes">Go to recipes</a></p>
+                </div>
+                <div class="desni_main_div">
+                    <img src="images/illustration3.png" alt="chef flips pan">
+                </div>
+            </div>
+        
+    </header>
+    <section class="offer">
+        <h1>We offer you Best & Delicious food</h1>
+        <h4>Creative social proof finders paradigm shift strategy inovator</h4>
+        <div class="offer_type">
+            <ul>
+                <li class="meals" id="breakfast" onclick="addClass(this)"><a href="#breakfast">1. Breakfast</a></li>
+                <li class="meals" id="lunch" onclick="addClass(this)"><a href="#lunch">2. Lunch</a></li>
+                <li class="meals" id="dinner" onclick="addClass(this)"><a href="#dinner">3. Dinner</a></li>
+            </ul>
+        </div>
+        <div class="offer_recipes">
+            <div class="offer_levi_div">
+                <h1>Our best Breakfast recipes</h1>
+                <div>
+                    <p>Breakfast is the most important meal of the day; choose from homemade waffles, granola, corned beef hash, pancakes, omelets or cinnamon buns.</p>
+                    <p>Jump start your day with these top-rated breakfast recipes. Whether it's something savory or a little sweet, we've got you covered with this nourishing round up.</p>
+                </div>
+                <p class="offer_button"><a href="#recipes">Go to recipes</a></p>
+            </div>
+            <div class="offer_desni_div">
+                <img src="images/illustration.png" alt="chef salting food">
+            </div>
+        </div>
+    </section>
+
+    <section class="users">
+        <h2>What Our Users Say</h2>
+        <div class="user_container">
+            <div class="left_arrow_div">
+                <a><img src="images/slider-left.png" alt="slide left"></a>
+            </div>
+            <div class="karusel_container">
+                <div class="karusel">
+                    <div class="user_div">
+                        <div class="left_user_div">
+                            <div class="user_img_div">
+                              
+                            </div>
+                            <div class="user_info_div">
+                               <h3>Carrie Gordon</h3>
+                                <p>novi sad, serbia</p> 
+                            </div>
+                            
+                        </div>
+                        <div class="right_user_div">
+                            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati enim nihil voluptas quibusdam laudantium, velit, neque porro pariatur totam id, quas voluptatum iure temporibus fugit recusandae quo harum possimus cum!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right_arrow_div">
+                <a><img src="images/slider-right.png" alt="slide right"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="our_latest_recipes"  id="recipes">
+        <h2>Our latest recipes</h2>
+        <p class="orange_link"><a href="">Show all recipes</a></p>
+        <div class="recipe_container">
+            <div class="recipe_div_1">
+                <a href="#recipes">
+                    <div class="image_div">
+    
+                    </div>
+                    <div class="text_div">
+                        <p>snacks</p>
+                        <h3>Spanish Tortila</h3>
+                    </div>
+                    <div class="info_div">
+                        <div class="time_div">
+                            <img src="images/clock-icon.png" alt="clock icon"><span> 20-30 min</span>
+                        </div>
+                        <div class="comment_div">
+                            <span>12</span><img src="images/comment-icon.png" alt="message icon">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="recipe_div_2">
+                <a href="#recipes">
+                    <div class="image_div">
+                        <p>trending</p>
+                    </div>
+                    <div class="text_div">
+                        <p>breakfast</p>
+                        <h3>Healthy oaty fruity cereal</h3>
+                    </div>
+                    <div class="info_div">
+                        <div class="time_div">
+                            <img src="images/clock-icon.png" alt="clock icon"><span>10 min</span>
+                        </div>
+                        <div class="comment_div">
+                            <span>7</span><img src="images/comment-icon.png" alt="message icon">
+                        </div>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="recipe_div_3">
+                <a href="#recipes">
+                    <div class="image_div">
+    
+                    </div>
+                    <div class="text_div">
+                        <p>sauces</p>
+                        <h3>Cheat's cranberry sauce</h3>
+                    </div>
+                    <div class="info_div">
+                        <div class="time_div">
+                            <img src="images/clock-icon.png" alt="clock icon"><span>15-20 min</span>
+                        </div>
+                        <div class="comment_div">
+                            <span>2</span><img src="images/comment-icon.png" alt="message icon">
+                        </div>
+                    </div>
+                </a>
+            </div>
+    
+            <div class="recipe_div_4">
+                <a href="#recipes">
+                    <div class="image_div">
+    
+                    </div>
+                    <div class="text_div">
+                        <p>start cooking!</p>
+                        <h2>Check other recipes</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular">
+        <div class="left_popular">
+            <div class="left_top">
+                <p class="popular_p">popular this week</p>
+                <h2>Hummus with Spiced Summer Squash and Lamb</h2>
+                <p class="light_letters">If you're making this hummus recipe for a finicky crowd, serve all the toppings in separate bowls and let people help themselves. 
+                    Lots of toasted pita for scooping up everything is nonnegotiable.
+                </p>
+            </div>
+            <div class="left_bot">
+                <h3>Ingridients</h3>
+                <div class="ingridient_lists">
+                    <div class="left_list">
+                        <p class="light_letters bold">Lamb & Assembly</p>
+                        <ul class="light_letters">
+                            <li>- 2 tsp. kosher salt</li>
+                            <li>- 1&#189; tsp. ground coriander</li>
+                            <li>- 1&#189; tsp. ground cumin</li>
+                            <li>- 1&#189; crushed red pepper flakes</li>
+                            <li>- 2 tsp. extra-virgin olive oil, divided</li>
+                        </ul>
+                    </div>
+                    <div class="right_list">
+                        <p class="light_letters bold">Hummus</p>
+                        <ul class="light_letters">
+                            <li>- 2 15.5-oz. cans chickpeas, rinsed</li>
+                            <li>- 1 garlic clove, coarsely chopped</li>
+                            <li>- 1&#189; cup tahini</li>
+                            <li>- 3 Tbsp. fresh lemon juice</li>
+                            <li>- 1&#189; kosher salt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="popular_recipe_button"><a href="#recipes">Read full recipe</a></p>
+        </div>
+        <div class="right_popular">
+            <img src="images/dish-tortilla.png" alt="tortilla dish">
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="partner_logo">
+            <img src="images/unilever.png" alt="unilever food solutions logo">
+        </div>
+        <div class="partner_logo">
+            <img src="images/wrigley.png" alt="wrigley logo">
+        </div>
+        <div class="partner_logo">
+            <img src="images/cheerios.png" alt="cheerios logo">
+        </div>
+        <div class="partner_logo">
+            <img src="images/green-giant.png" alt="green giant logo">
+        </div>
+        <div class="partner_logo">
+            <img src="images/kraft-heinnz.png" alt="kraft heinnz logo">
+        </div>
+    </section>
+
+    <section class="newsletters">
+            <h2>Subscribe to our Newsletters</h2>
+            <div class="sub_form">
+                <input type="email" name="email" placeholder="Email addres">
+            <p><a class="subscribe_button" href="#">Subscribe</a></p>
+            </div>
+            <p class="privacy_letters">We will not share your information with anyone</p>
+    </section>
+
+    <footer>
+        <div class="main_foot_div">
+            <address>
+                <img src="images/logo.png" alt="food blogger logo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error cum nemo rerum ex suscipit aperiam sed dolore deleniti in nam necessitatibus, ut, similique ipsum. Voluptas aperiam dignissimos quae eius quo?</p>
+                <div class="phone_mail">
+                    <p>T: (+61) 979 185 942</p>
+                    <p>E: contact@foodblogger.com</p>
+                </div>
+            </address>
+            <div class="links">
+                <div class="popular_recipes">
+                    <h3>Popular Recipes</h3>
+                    <ul>
+                        <li><a href="#">Beef Medalion</a></li>
+                        <li><a href="#">Penne Arrabiata</a></li>
+                        <li><a href="#">Sweet & Chicken</a></li>
+                        <li><a href="#">Thai Chicken Curry</a></li>
+                        <li><a href="#">Fish Curry</a></li>
+                    </ul>
+                </div>
+                <div class="usefull_links">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Chef Inspirations</a></li>
+                        <li><a href="#">Recipes</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="foot_note">
+            <p>&copy;Copyright 2019 FoodBlogger. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

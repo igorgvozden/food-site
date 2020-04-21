@@ -1,0 +1,93 @@
+@mixin whole_doc {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin content-width {
+    width: 75%;
+    margin: 0 auto;
+}
+
+@mixin naslovi {
+    margin: 0 auto;
+    padding: 0.5em;
+    font-size: 2em;
+    font-family: $sub_font;
+    text-align: center;
+}
+
+@mixin orange_button {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+    font-weight: bolder;
+    padding: 1em 3em;
+    border-radius: 50px;
+    background-color: $orange;
+    &:hover {
+        background-color: $hover_orange;
+    }
+}
+
+@mixin recipe {
+    flex-basis: 25%;
+    margin: 0.5em;
+    box-shadow: 0 4px 8px 0 $pale_blue, 0 6px 20px 0 $pale_blue;
+    border-radius: 15px;
+    a {
+        text-decoration: none;
+        color: $navy_blue;
+    }
+    .image_div {
+        height: 220px;
+        background-position: center;
+        background-size: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .text_div {
+        height: 80px;
+        padding: 1em 1.5em;
+        p {
+            text-transform: uppercase;
+            color: $hover_orange;
+            font-weight: bold;
+        }
+        h3 {
+            font-family: $sub_font;
+            padding: 1em 0;
+        }
+    }
+    .info_div {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 1.5em;
+        .time_div, .comment_div {
+            display: flex;
+            align-items: center;
+            opacity: 0.3;
+            span {
+                padding: 0 0.5em;
+            }
+        }
+    }
+}
+
+@mixin trending_tag {
+    display: inline-block;
+    margin: 1em;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    background-color: $light_green;
+    border-radius: 10px;
+}
+
+@mixin tablet_content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
